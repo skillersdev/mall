@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Routes,Router,RouterModule,ActivatedRoute}  from '@angular/router';
 import { Http, Response,  RequestOptions, URLSearchParams, Headers } from '@angular/http';
 import { AppSettings } from '../appSettings';
 import { CommonService } from '../services/common.service';
@@ -10,16 +11,21 @@ import { CommonService } from '../services/common.service';
 export class ShoplistComponent {
   title = 'mall';
   model:any;
-
+  productlist:any;  
+  image:any;
   
-  
-  constructor(private CommonService: CommonService,private http:Http) { }
+  constructor(private CommonService: CommonService,private route:ActivatedRoute,private router: Router,private http:Http) { }
 
 ngOnInit() {
   this.model={};
-  this.CommonService.insertdata(AppSettings.getmallproductDetail,this.model)
-  .subscribe(package_det =>{       
-    console.log(package_det);
+  this.image = AppSettings.IMAGE_BASE;
+ this.route.params.subscribe(params => {
+    this.model.shopname = params['id']; // (+) converts string 'id' to a number
+ }); 
+ 
+  this.CommonService.insertdata(AppSettings.getshopmallproduct,this.model)
+  .subscribe(response =>{       
+    this.productlist = response.result;
   });
 }
 }

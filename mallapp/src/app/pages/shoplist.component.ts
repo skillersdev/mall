@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { Routes,Router,RouterModule,ActivatedRoute}  from '@angular/router';
 import { Http, Response,  RequestOptions, URLSearchParams, Headers } from '@angular/http';
 import { AppSettings } from '../appSettings';
 import { CommonService } from '../services/common.service';
+
 @Component({
   selector: 'app-shoplist',
   templateUrl: './shoplist.component.html',
@@ -20,7 +21,7 @@ ngOnInit() {
   this.model={};
   this.image = AppSettings.IMAGE_BASE;
  this.route.params.subscribe(params => {
-    this.model.shopname = params['id']; // (+) converts string 'id' to a number
+    this.model.shopname = 'shop1'//params['id']; // (+) converts string 'id' to a number
  }); 
  
   this.CommonService.insertdata(AppSettings.getshopmallproduct,this.model)

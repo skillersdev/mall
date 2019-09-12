@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ShoplistComponent } from './pages/shoplist.component';
 
 const routes: Routes = [ {
-  path: '',
+  path: 'shop/:id',
   component: ShoplistComponent
 },];
 

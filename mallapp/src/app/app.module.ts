@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { CommonService } from './services/common.service';
 import { TopnavComponent } from './topnav/topnav.component';
 
+import { MalllistComponent } from './pages/malllist.component';
 import { ShoplistComponent } from './pages/shoplist.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopnavComponent,
+    MalllistComponent,
     ShoplistComponent
   ],
   imports: [

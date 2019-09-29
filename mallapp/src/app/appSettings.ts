@@ -8,4 +8,6 @@ export class AppSettings{
 
 	public static getmallproductDetail = AppSettings.API_BASE + "/getmallproduct"; 
 	public static getshopmallproduct = AppSettings.API_BASE + "/getshopmallproduct"; 
+	public static getmalllist = AppSettings.API_BASE + "/getmalllist"; 
+	
 }

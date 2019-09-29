@@ -22,6 +22,7 @@ export class TopnavComponent implements OnInit {
   ngOnInit() {
     this.image = AppSettings.IMAGE_BASE;
     this.logoname=localStorage.getItem('logoname');
+    console.log(this.logoname,'dhana');
 //  this.route.params.subscribe(params => { 
 //     this.model.shopname = params['id']; // (+) converts string 'id' to a number
 //     this.CommonService.insertdata(AppSettings.getshopmallproduct,this.model)

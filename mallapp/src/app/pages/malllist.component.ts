@@ -13,23 +13,19 @@ declare var $ :any;
 })
 export class MalllistComponent {
   title = 'mall';
-  model:any;
-  productlist:any;  
+  malllist:any;  
   image:any;
-  mall:any;
-  banner:any;
+  shop:any;
   
   constructor(private CommonService: CommonService,private route:ActivatedRoute,private router: Router,private http:Http) { }
 
 ngOnInit() {
-  this.model={};
   this.image = AppSettings.IMAGE_BASE;
-
-this.CommonService.getdata(AppSettings.getshopmallproduct)
-  // this.CommonService.insertdata(AppSettings.getshopmallproduct,this.model)
+  localStorage.setItem('logoname', 'logo.png');
+this.CommonService.getdata(AppSettings.getmalllist)
   .subscribe(response =>{       
-    this.productlist = response.result;
-    this.mall = response.shop;
+    this.malllist = response.result;
+    this.shop = response.shop;
   });
 }
 }

@@ -1482,7 +1482,11 @@ p.checkout-coupon input[type="text"] {
 }    
 .custom-col-5 {
   flex: 0 0 100%;
-  max-width: 100%;
+  max-width: 50%;
+}   
+.custom-col-5 .mobile {
+  flex: 0 0 100% !important;
+  max-width: 50% !important;
 }    
 .hidden-items .shop-filters-right.is-visible .custom-col-5 {
   flex: 0 0 100%;
@@ -1529,7 +1533,7 @@ p.checkout-coupon input[type="text"] {
 }    
     
  .modal-dialog {
-  margin: 150px auto;
+  margin: 50px auto;
   min-width: 100%;
 }   
  .modal-body .qwick-view-left , .modal-body .qwick-view-left {

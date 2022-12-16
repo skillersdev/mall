@@ -13,24 +13,29 @@ declare var $ :any;
 })
 export class TopnavComponent implements OnInit {
   model:any;  
-  image:any;
+  imagepath:any;
   shop:any;
   logoname:any;
+  banner:any;
   
   constructor(private CommonService: CommonService,private route:ActivatedRoute,private router: Router,private http:Http) { }
 
   ngOnInit() {
-    this.image = AppSettings.IMAGE_BASE;
+    this.imagepath = AppSettings.IMAGE_BASE;
     this.logoname=localStorage.getItem('logoname');
-    console.log(this.logoname,'dhana');
-//  this.route.params.subscribe(params => { 
-//     this.model.shopname = params['id']; // (+) converts string 'id' to a number
-//     this.CommonService.insertdata(AppSettings.getshopmallproduct,this.model)
-//   .subscribe(response =>{   
-//     this.shop = response.shop;
-//     console.log(this.shop);
-//   }); 
-//  }); 
+ this.route.params.subscribe(params => { 
+    this.model.shopname = params['id']; // (+) converts string 'id' to a number
+    this.CommonService.getdatabyid(AppSettings.getshopmallproduct,this.model)
+  .subscribe(response =>{   
+    this.shop = response.shop;
+    // console.log(this.shop);
+    this.banner = this.imagepath+this.shop.banner;
+    $(".banner-img").css("background-image", "url(" + this.banner + ")");
+    this.logoname=this.imagepath+this.shop.logo
+    localStorage.setItem('logoname', this.shop.logo);
+
+  }); 
+ }); 
  
      
   }

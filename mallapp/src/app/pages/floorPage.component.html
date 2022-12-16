@@ -85,51 +85,45 @@
 <div class="shop-limited-area bg-img pt-90 pb-100"  data-overlay="3">
     <div class="container">
         <div class="shop-limited-content text-center">
-            <!-- <h2>{{mallInfo[0].mall_name}}</h2> -->
-
             <div class="col-md-12 text-center">
                 <h3 class="animate-charcter"> {{mallInfo[0].mall_name}}</h3>
               </div>
-            
-
-            <!-- <svg viewBox="0 0 960 300">
-                <symbol id="s-text">
-                    <text text-anchor="middle" x="50%" y="80%">{{mallInfo[0].mall_name}} </text>
-                <text text-anchor="middle" x="52%" y="80%">{{mallInfo[0].mall_name}} </text>
-                
-                </symbol>
-            
-                <g class = "g-ants">
-                    <use xlink:href="#s-text" class="text-copy"></use>
-                    <use xlink:href="#s-text" class="text-copy"></use>
-                    <use xlink:href="#s-text" class="text-copy"></use>
-                    <use xlink:href="#s-text" class="text-copy"></use>
-                    <use xlink:href="#s-text" class="text-copy"></use>
-                </g>
-            </svg> -->
-
-
-            
-           
         </div>
     </div>
 </div>
 
-<div class="product-collection-area pt-10 pb-50">
+
+   
+    <div class="section-title text-center mt-20 mb-55">
+        <h2> {{floorDetails[0].floor_name}}</h2>
+       
+    </div>
 
 
 
-    <section class="c-hero-flex">
-        <span class="c-hero-flex__item" *ngFor="let floorData of mallfloorList let idx=index ">
-        <a href="mall/{{mallInfo[0].id}}/floor/{{floorData.id}}" class="c-hero-flex__item"  [ngStyle]="{ 'background-image': 'url(' + image +floorData.image_name +')'}">
-          <h2 class="c-hero-flex__title">{{floorData.floor_name}}</h2>
-          <!-- <div class="loader"></div> -->
-        </a></span>
-      </section>
+    <div class="row ml-10 mr-10">
+
+        <div class="col-md-6 col-lg-4 col-xl-3" *ngFor="let floorShop of floorshoplist let idx=index ">
+            <div class="single-product mb-35">
+                <div class="product-img">
+                    <a href="shop/{{floorShop.shop_name}}"><img src="{{image}}{{floorShop.banner}}" alt=""></a>
+                    <span>{{floorShop.shop_name}}</span>
+                  
+                    
+                </div>
+               
+            </div>
+        </div>
+       
+     
+
+        
+    </div>
+
+ 
 
 
 
-</div>
 
 <!-- <footer class="footer-area gray-bg pt-100 pb-95">
     <div class="container">

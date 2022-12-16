@@ -3,14 +3,26 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { MalllistComponent } from './pages/malllist.component';
 import { ShoplistComponent } from './pages/shoplist.component';
+import {AllMallsComponent } from './pages/allMalls.component';
+import { FloorPageComponent } from "./pages/floorPage.component";
 
-const routes: Routes = [ {
-  path: '',
-  component: MalllistComponent
-},{
+const routes: Routes = [ 
+  {
+    path: '',
+    component: AllMallsComponent
+  },{
+    path: 'mall/:id',
+    component: MalllistComponent
+  },{
   path: 'shop/:id',
   component: ShoplistComponent
-},];
+  },
+  {
+    path: 'mall/:id/floor/:floorid',
+    component: FloorPageComponent
+  }
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

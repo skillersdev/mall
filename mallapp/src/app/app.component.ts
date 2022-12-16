@@ -19,7 +19,7 @@ ngOnInit() {
   this.model={};
   this.CommonService.insertdata(AppSettings.getmallproductDetail,this.model)
   .subscribe(package_det =>{       
-    console.log(package_det);
+    //console.log(package_det);
   });
 }
 }

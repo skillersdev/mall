@@ -20,6 +20,7 @@ export class FloorPageComponent {
   shop:any;
   model:any;
   mallInfo:any; 
+  mallLogo:any;
   constructor(private CommonService: CommonService,private route:ActivatedRoute,private router: Router,private http:Http) { }
 
 
@@ -39,7 +40,8 @@ ngOnInit() {
     .subscribe(response =>{       
     this.mallfloorList = response.result;
     this.mallInfo=response.result.mall_det;
-    $(".shop-limited-area").css("background-image", "url(" +this.image+ this.mallInfo[0].image_name + ")");
+    this.mallLogo = this.image+ this.mallInfo.image_name;
+    $(".shop-limited-area").css("background-image", "url(" +this.image+ this.mallInfo.image_name + ")");
    
   });
 

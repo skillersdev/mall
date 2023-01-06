@@ -88,7 +88,7 @@
             <!-- <h2>{{mallInfo[0].mall_name}}</h2> -->
 
             <div class="col-md-12 text-center">
-                <h3 class="animate-charcter"> {{mallInfo[0].mall_name}}</h3>
+                <h3 class="animate-charcter"> {{mallInfo.mall_name}}</h3>
               </div>
             
 
@@ -137,8 +137,15 @@
             <div class="col-lg-3 col-md-5 col-12">
                 <div class="footer-widget">
                     <div class="footer-widget-l-content">
-                        <h4>Mall Name Here</h4>
+                        <h4>{{mallInfo.mall_name}}</h4>
                         
+                    </div>
+                    <div>
+                        <ul>
+                            <li><span>Country :</span> {{mallInfo.country}}</li>
+                            <li><span>State : </span> {{mallInfo.state}}</li>
+                            <li><span>Address :</span> {{mallInfo.address}}</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -146,8 +153,7 @@
                 <div class="footer-widget">
                     <div class="footer-widget-m-content text-center">
                         <div class="footer-logo">
-                            <!-- <a href="#"><img src="assets/img/logo/logo.png" alt=""></a> -->
-                            Mall Image in Thumnail 
+                            <a href="#"><img src="{{mallLogo}}" class="malllogo" alt=""></a>
                         </div>
                         <!-- <div class="footer-nav">
                             <nav>
@@ -167,11 +173,11 @@
             <div class="col-lg-3 col-md-12 col-12">
                 <div class="footer-widget f-right">
                     <div class="footer-widget-r-content">
-                        <ul>
-                            <li><span>Phone :</span> +00 123 54 0056</li>
-                            <li><span>Email : </span> <a href="#">neha@gmail.com</a></li>
-                            <li><span>Address :</span> Dhaka Bangladesh</li>
-                        </ul>
+                        <!-- <ul>
+                            <li><span>Country :</span> {{mallInfo.country}}</li>
+                            <li><span>State : </span> {{mallInfo.state}}</li>
+                            <li><span>Address :</span> {{mallInfo.address}}</li>
+                        </ul> -->
                     </div>
                 </div>
             </div>

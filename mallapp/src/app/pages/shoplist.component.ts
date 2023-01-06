@@ -26,6 +26,7 @@ export class ShoplistComponent implements OnInit  {
   customerData:any;
   productdata:any;
   productfilter:any;
+  mallLogo:any;
   
   constructor(private CommonService: CommonService,private route:ActivatedRoute,private router: Router,private http:Http) { }
 
@@ -47,7 +48,7 @@ ngOnInit() {
     this.shop = response.shop;
     this.category=response.categorylist;
     this.banner = this.image+this.shop.banner;
-
+    this.mallLogo = this.image+ this.shop.logo;
     this.category.forEach(catData => {
         console.log(catData.category_name);
 
@@ -56,9 +57,12 @@ ngOnInit() {
 
     });
 
-    console.log("this.productdata--->",this.productdata);
+    
 
     $(".banner-img").css("background-image", "url(" + this.banner + ")");
+    
+
+    console.log("this.productdata--->",this.mallLogo);
     localStorage.setItem('logoname', this.shop.logo);
    
 

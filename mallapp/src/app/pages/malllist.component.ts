@@ -19,6 +19,7 @@ export class MalllistComponent {
   model:any;
   mallInfo:any;
   mallfloorList:any;  
+  mallLogo:any;
   constructor(private CommonService: CommonService,private route:ActivatedRoute,private router: Router,private http:Http) { }
 
 
@@ -31,15 +32,17 @@ ngOnInit() {
     this.model.mall_id= params['id'];
  }); 
 
- console.log(this.model);
+ 
  
   localStorage.setItem('logoname', 'logo.png');
 this.CommonService.insertdata(AppSettings.getmallshoplist,this.model)
   .subscribe(response =>{       
     this.mallshoplist = response.result;
     this.mallInfo=response.result.mall_det;
-    $(".shop-limited-area").css("background-image", "url(" +this.image+ this.mallInfo[0].image_name + ")");
-    $(".pic").css("background-image", "url(" +this.image+ this.mallInfo[0].image_name + ")");
+    
+    this.mallLogo = this.image+ this.mallInfo.image_name;
+    $(".shop-limited-area").css("background-image", "url(" +this.image+ this.mallInfo.image_name + ")");
+    $(".pic").css("background-image", "url(" +this.image+ this.mallInfo.image_name + ")");
     // console.log("mallshoplist",this.mallshoplist);
     // console.log("response.result-->",response.result);
   });

@@ -39,7 +39,7 @@ this.CommonService.insertdata(AppSettings.getmallshoplist,this.model)
   .subscribe(response =>{       
     this.mallshoplist = response.result;
     this.mallInfo=response.result.mall_det;
-    
+    console.log("response.result-->",this.mallInfo);
     this.mallLogo = this.image+ this.mallInfo.image_name;
     $(".shop-limited-area").css("background-image", "url(" +this.image+ this.mallInfo.image_name + ")");
     $(".pic").css("background-image", "url(" +this.image+ this.mallInfo.image_name + ")");
@@ -53,7 +53,7 @@ this.CommonService.insertdata(AppSettings.getmallshoplist,this.model)
   this.CommonService.insertdata(AppSettings.getfloorlist,this.model)
   .subscribe(response =>{       
     this.mallfloorList = response.result;
-    console.log("response.result-->",response.result);
+    
   });
 
 

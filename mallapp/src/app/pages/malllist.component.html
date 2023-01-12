@@ -121,7 +121,7 @@
 
     <section class="c-hero-flex">
         <span class="c-hero-flex__item" *ngFor="let floorData of mallfloorList let idx=index ">
-        <a href="mall/{{mallInfo[0].id}}/floor/{{floorData.id}}" class="c-hero-flex__item"  [ngStyle]="{ 'background-image': 'url(' + image +floorData.image_name +')'}">
+        <a href="mall/{{mallInfo.id}}/floor/{{floorData.id}}" class="c-hero-flex__item"  [ngStyle]="{ 'background-image': 'url(' + image +floorData.image_name +')'}">
           <h2 class="c-hero-flex__title">{{floorData.floor_name}}</h2>
           <!-- <div class="loader"></div> -->
         </a></span>

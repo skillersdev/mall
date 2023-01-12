@@ -38,7 +38,7 @@ ngOnInit() {
   this.productdata=[];
   
  this.route.params.subscribe(params => { 
-    this.model.shopname = params['id']; // (+) converts string 'id' to a number
+    this.model.shopname = params['shopid']; // (+) converts string 'id' to a number
  }); 
  
   this.CommonService.insertdata(AppSettings.getshopmallproduct,this.model)

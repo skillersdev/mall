@@ -14,7 +14,8 @@ const routes: Routes = [
     path: 'mall/:id',
     component: MalllistComponent
   },{
-  path: 'shop/:id',
+    path: 'mall/:id/floor/:floorid/shop/:shopid',
+    //path: 'shop/:id',
   component: ShoplistComponent
   },
   {

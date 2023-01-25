@@ -115,21 +115,35 @@
     </div>
 </div>
 
-<div class="product-collection-area pt-10 pb-50">
-
-
-
+<!-- <div class="product-collection-area pt-10 pb-50">
     <section class="c-hero-flex">
         <span class="c-hero-flex__item" *ngFor="let floorData of mallfloorList let idx=index ">
         <a href="mall/{{mallInfo.id}}/floor/{{floorData.id}}" class="c-hero-flex__item"  [ngStyle]="{ 'background-image': 'url(' + image +floorData.image_name +')'}">
           <h2 class="c-hero-flex__title">{{floorData.floor_name}}</h2>
-          <!-- <div class="loader"></div> -->
+       
         </a></span>
       </section>
 
+</div> -->
 
+<div class="row">
+    <div class="container">
 
+        <div class="test_box box-01 col-xs-3 col-md-3" *ngFor="let floorData of mallfloorList let idx=index ">
+            <div class="inner" [ngStyle]="{ 'background-image': 'url(' + image +floorData.image_name +')'}">
+                <a href="mall/{{mallInfo.id}}/floor/{{floorData.id}}" class="test_click">
+                    <div class="flex_this">
+                        <h1 class="test_title">{{floorData.floor_name}}</h1>
+                        <span class="test_link">Visit</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+       
+    </div>
 </div>
+
+
 
 <footer class="footer-area gray-bg pt-100 pb-95">
     <div class="container">

@@ -38,7 +38,9 @@ ngOnInit() {
   this.productdata=[];
   
  this.route.params.subscribe(params => { 
-    this.model.shopname = params['shopid']; // (+) converts string 'id' to a number
+    this.model.shopname = params['shopid']; 
+    this.model.floorCode = params['floorid'];
+    this.model.mallName = params['id'];// (+) converts string 'id' to a number
  }); 
  
   this.CommonService.insertdata(AppSettings.getshopmallproduct,this.model)
@@ -99,7 +101,7 @@ confirmOrder(){
   });
 }
 
-placeOrder(orderProduct:any){
+placeOrder(orderProduct:any,selectedQty:any){
   this.orderItems=orderProduct;
   this.model.shop_id=orderProduct.shop_id;
   this.model.mall_id =orderProduct.mall_id;

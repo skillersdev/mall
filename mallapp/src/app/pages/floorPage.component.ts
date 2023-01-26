@@ -49,7 +49,7 @@ ngOnInit() {
     .subscribe(response =>{       
     this.floorshoplist = response.result;
     this.floorDetails = response.floorDetail;
-   
+    this.model.mallName = response.mall_name;
   });
  
 

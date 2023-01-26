@@ -108,7 +108,7 @@ img.malllogo{
         <div class="col-md-6 col-lg-4 col-xl-3" *ngFor="let floorShop of floorshoplist let idx=index ">
             <div class="single-product mb-35">
                 <div class="product-img">
-                    <a href="mall/{{floorShop.mall_id}}/floor/{{floorShop.floor_id}}/shop/{{floorShop.shop_name}}"><img src="{{image}}{{floorShop.banner}}" alt=""></a>
+                    <a href="mall/{{model.mallName}}/floor/{{floorDetails[0].floor_code}}/shop/{{floorShop.shop_code}}"><img src="{{image}}{{floorShop.banner}}" alt=""></a>
                     <span>{{floorShop.shop_name}}</span>
                   
                     

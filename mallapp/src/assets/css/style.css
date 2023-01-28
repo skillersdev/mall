@@ -720,6 +720,8 @@
 }
 .single-product , .product-img {
   position: relative;
+  height: 223px;
+  overflow: hidden;
 }
 .product-img > span {
   background-color: #626262;
@@ -969,6 +971,8 @@
 
 .blog-img {
   margin-bottom: 25px;
+  height: 191px;
+  overflow: hidden;
 }
 .blog-img img {
   width: 100%;

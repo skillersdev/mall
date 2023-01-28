@@ -41,7 +41,7 @@ ngOnInit() {
     this.mallfloorList = response.result;
     this.mallInfo=response.result.mall_det;
     this.mallLogo = this.image+ this.mallInfo.image_name;
-    $(".shop-limited-area").css("background-image", "url(" +this.image+ this.mallInfo.image_name + ")");
+    
    
   });
 
@@ -50,6 +50,8 @@ ngOnInit() {
     this.floorshoplist = response.result;
     this.floorDetails = response.floorDetail;
     this.model.mallName = response.mall_name;
+
+    $(".shop-limited-area").css("background-image", "url(" +this.image+ this.floorDetails[0].image_name + ")");
   });
  
 

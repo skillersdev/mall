@@ -724,8 +724,8 @@
 .single-product , .product-img {
   position: relative;
   /* height: 223px; */
-  min-height: 170px;
-  max-height: 170px;
+  /* min-height: 170px;
+  max-height: 170px; */
   /* overflow: hidden; */
 }
 .product-img > span {

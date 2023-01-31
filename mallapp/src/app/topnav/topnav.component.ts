@@ -37,8 +37,46 @@ export class TopnavComponent implements OnInit {
   }); 
  }); 
  
-     
+ this.showCart();
+this.searchForm();
   }
 
+  searchForm(){
+    var searchTrigger = $('button.sidebar-trigger-search'),
+    endTriggersearch = $('button.search-close'),
+    container = $('.main-search-active');
+    searchTrigger.on('click', function() {
+        container.addClass('inside');
+    });
+
+    endTriggersearch.on('click', function() {
+        container.removeClass('inside');
+    });
+  }
+
+  showCart(){
+
+    var menuTrigger = $('button.sidebar-trigger'),
+            endTrigger = $('button.op-sidebar-close'),
+            container = $('.sidebar-cart'),
+            wrapper = $('.wrapper');
+        
+        wrapper.prepend('<div class="body-overlay"></div>');
+        menuTrigger.on('click', function() {
+            container.addClass('inside');
+            wrapper.addClass('overlay-active');
+        });
+        
+        endTrigger.on('click', function() {
+            container.removeClass('inside');
+            wrapper.removeClass('overlay-active');
+        });
+        
+        $('.body-overlay').on('click', function() {
+            container.removeClass('inside');
+            wrapper.removeClass('overlay-active');
+        });
+
+  }
 
 }

@@ -2,6 +2,12 @@
   img.malllogo{
   width: 15%;height: auto;
 }
+.prod_description{
+  white-space: nowrap; 
+  width: 110px; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
 </style>
 <app-topnav></app-topnav>
 <!-- sidebar-cart start -->
@@ -523,7 +529,7 @@
                                   <span>2 Ratting (S)</span>
                               </div>
                           </div> -->
-            <p>{{ viewData.description }}</p>
+            <p class="prod_description">{{ viewData.description }}</p>
             <!-- <div class="quick-view-select">
                               <div class="select-option-part">
                                   <label>Size*</label>

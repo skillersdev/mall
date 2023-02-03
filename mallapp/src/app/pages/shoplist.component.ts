@@ -58,8 +58,12 @@ ngOnInit() {
        this.productdata.push({catName:catData.category_name,productlist:this.productfilter});   
 
     });
-
-    
+    if(this.shop.logo){
+      $("#my_image").attr("src",this.mallLogo);
+    }else{
+      $("#my_image").attr("src","assets/img/logo/logo.png");
+    }
+   
 
     $(".banner-img").css("background-image", "url(" + this.banner + ")");
     

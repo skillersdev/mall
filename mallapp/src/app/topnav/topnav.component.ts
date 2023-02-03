@@ -17,13 +17,18 @@ export class TopnavComponent implements OnInit {
   shop:any;
   logoname:any;
   banner:any;
+  shopPage:Boolean=false;
   
   constructor(private CommonService: CommonService,private route:ActivatedRoute,private router: Router,private http:Http) { }
 
   ngOnInit() {
     this.imagepath = AppSettings.IMAGE_BASE;
+    this.shopPage = false;
     this.logoname=localStorage.getItem('logoname');
  this.route.params.subscribe(params => { 
+    if(params['shopid']){
+      this.shopPage = true;
+    }
     this.model.shopname = params['id']; // (+) converts string 'id' to a number
     this.CommonService.getdatabyid(AppSettings.getshopmallproduct,this.model)
   .subscribe(response =>{   
@@ -53,7 +58,14 @@ this.searchForm();
         container.removeClass('inside');
     });
   }
-
+  navigatePage(){
+    if(this.shopPage){
+      this.router.navigate([this.router.url]);
+    }else{
+      this.router.navigate(['/']);
+    }
+    
+  }
   showCart(){
 
     var menuTrigger = $('button.sidebar-trigger'),

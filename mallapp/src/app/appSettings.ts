@@ -24,6 +24,7 @@ export class AppSettings{
 	public static getfloorlist=AppSettings.API_BASE+'/getfloor';
 	public static getshopbymallidfloorid=AppSettings.API_BASE+'/getshopbymallidfloorid';
 	public static addOrder=AppSettings.API_BASE+'/createorder';
-	
+	public static editshop = AppSettings.API_BASE + "/editshop/";
+	public static sendContactdetails = AppSettings.API_BASE + "/sendcontact";
 	
 }

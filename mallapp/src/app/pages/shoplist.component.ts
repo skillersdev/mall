@@ -70,6 +70,8 @@ ngOnInit() {
 
     console.log("this.productdata--->",this.mallLogo);
     localStorage.setItem('logoname', this.shop.logo);
+    localStorage.setItem('shopbannername', this.banner);
+    localStorage.setItem('shopId', this.shop.id);
    
 
   });

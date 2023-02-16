@@ -11,6 +11,7 @@ import {AllMallsComponent } from './pages/allMalls.component';
 import { MalllistComponent } from './pages/malllist.component';
 import { ShoplistComponent } from './pages/shoplist.component';
 import { FloorPageComponent } from "./pages/floorPage.component";
+import { ContactusComponent } from './pages/contactus/contactus.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FloorPageComponent } from "./pages/floorPage.component";
     AllMallsComponent,
     MalllistComponent,
     ShoplistComponent,
-    FloorPageComponent
+    FloorPageComponent,
+    ContactusComponent
   ],
   imports: [
     BrowserModule,

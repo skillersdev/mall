@@ -1,0 +1,192 @@
+<app-topnav></app-topnav>
+<div class="breadcrumb-area pt-205 pb-210 bg-img banner-img">
+    <div class="container">
+        <div class="breadcrumb-content">
+            <h2>contact</h2>
+            <ul>
+                <li><a href="#">home</a></li>
+                <li> contact </li>
+            </ul>
+        </div>
+    </div>
+</div>
+  <!-- contact-area start -->
+  <div class="contact-area ptb-100">
+    <div class="container">
+        <div class="contact-info">
+            <h2 class="contact-title">contact info</h2>
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-12">
+                    <div class="single-contact-info mb-40">
+                        <div class="contact-info-icon">
+                            <i class="ion-ios-location-outline"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <p>
+                                Location : <br> {{model.address}}, {{model.cityname}}, {{model.countryname}}.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12" *ngIf="model.phonenumber">
+                    <div class="single-contact-info mb-40">
+                        <div class="contact-info-icon">
+                            <i class="ion-ios-telephone-outline"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <p>
+                                Phone : <br> {{model.phonenumber}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12" *ngIf="model.email">
+                    <div class="single-contact-info mb-40">
+                        <div class="contact-info-icon">
+                            <i class="ion-ios-email-outline"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <p>Mail : <br> <a href="#">{{model.email}}</a> </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12" *ngIf="model.telegram">
+                    <div class="single-contact-info mb-40">
+                        <div class="contact-info-icon">
+                            <i class="ion-social-telegram"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <p>Telegram : <br> <a href="#">{{model.telegram}}</a> </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12" *ngIf="model.twitter_url">
+                    <div class="single-contact-info mb-40">
+                        <div class="contact-info-icon">
+                            <i class="ion-social-twitter"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <p>Twitter : <br> <a href="#">{{model.twitter_url}}</a> </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12" *ngIf="model.whatsapp">
+                    <div class="single-contact-info mb-40">
+                        <div class="contact-info-icon">
+                            <i class="ion-social-whatsapp"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <p>whatsapp : <br> <a href="#">{{model.whatsapp}}</a> </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12" *ngIf="model.fb_link">
+                    <div class="single-contact-info mb-40">
+                        <div class="contact-info-icon">
+                            <i class="ion-social-facebook"></i>
+                        </div>
+                        <div class="contact-info-content">
+                            <p>Facebook : <br> <a href="#">{{model.fb_link}}</a> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-form-wrap">
+            <form #contact="ngForm">
+            <h2 class="contact-title">Get In Touch</h2>
+            <div class="contact-message">
+                <!-- <form id="contact-form" action="assets/mail.php" method="post"> -->
+                    <div class="row">
+                        <div class="col-lg-6">                           
+                            <div class="form-group">
+                                <div class="form-line contact-form-style contact-font-one">
+                                    <input type="text" class="form-control" placeholder="Your Name" [(ngModel)]="model.yourname" #yourname="ngModel" name="yourname" required>
+                                </div>
+                                <span [hidden]="yourname.valid || yourname.pristine" class="text-danger">Name is required</span>
+                            </div>                           
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <div class="form-line contact-form-style contact-font-one">
+                                    <input type="text" class="form-control" placeholder="Email" [(ngModel)]="model.Toemail" #Toemail="ngModel" name="Toemail" required>
+                                </div>
+                                <span [hidden]="Toemail.valid || Toemail.pristine" class="text-danger">Email is required</span>
+                            </div>   
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="form-group">
+                                <div class="form-line contact-form-style contact-font-one">
+                                    <input type="text" class="form-control" placeholder="Your title" [(ngModel)]="model.title" #title="ngModel" name="title" required>
+                                </div>
+                                <span [hidden]="title.valid || title.pristine" class="text-danger">Title is required</span>
+                            </div> 
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="contact-form-style contact-font-four">
+                                <div class="form-line contact-form-style contact-font-one">
+                                    <textarea class="form-control" placeholder="Message" [(ngModel)]="model.message" #message="ngModel" name="message" required></textarea>
+                                </div>
+                                <span [hidden]="message.valid || message.pristine" class="text-danger">Message is required</span>
+                                <button class="submit btn-hover"  [disabled]="!contact.form.valid" type="submit" (click)="submitContactform()"> Send Message</button>
+                            </div>
+                        </div>
+                    </div>
+                <!-- </form> -->
+                <p class="form-messege"></p>
+            </div>
+        </form>
+        </div>
+        <!-- <div class="contact-map">
+            <div id="hastech2"></div>
+        </div> -->
+    </div>
+</div>
+<!-- contact-area end -->
+
+<footer class="footer-area gray-bg pt-100 pb-95">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-5 col-12">
+                <div class="footer-widget">
+                    <div class="footer-widget-l-content">
+                        
+                        <ul>
+                            <li *ngIf="model.twitter_url">
+                                <a href="{{model.twitter_url}}"><i class="ion-social-twitter"></i></a>
+                            </li> 
+                            <li *ngIf="model.email">
+                                <a href="{{model.email}}"><i class="ion-ios-email-outline"></i></a>
+                            </li> 
+                            <li *ngIf="model.fb_link">
+                                <a href="{{model.fb_link}}"><i class="ion-social-facebook"></i></a></li> 
+                            <li *ngIf="model.telegram"><a href="{{model.telegram}}"><i class="ion-social-instagram-outline"></i></a></li> 
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-7 col-12">
+                <div class="footer-widget">
+                    <div class="footer-widget-m-content text-center">
+                        <div class="footer-logo">
+                            <a href="#"><img src="assets/img/logo/logo.png" alt=""></a>
+                        </div>
+                      
+                        <p>Copyright <i class="fa fa-copyright"></i> 2023  3ABC7. All rights reserved. </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-12 col-12">
+                <div class="footer-widget f-right">
+                    <div class="footer-widget-r-content">
+                        <ul>
+                            <li *ngIf="model.phonenumber"><span>Phone :</span> {{model.phonenumber}}</li>
+                            <li *ngIf="model.email"><span>Email : </span> <a href="#">{{model.email}}</a></li>
+                            <li *ngIf="model.address"><span>Address :</span>{{model.address}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

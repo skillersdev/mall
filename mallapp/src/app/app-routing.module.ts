@@ -5,6 +5,7 @@ import { MalllistComponent } from './pages/malllist.component';
 import { ShoplistComponent } from './pages/shoplist.component';
 import {AllMallsComponent } from './pages/allMalls.component';
 import { FloorPageComponent } from "./pages/floorPage.component";
+import { ContactusComponent } from './pages/contactus/contactus.component';
 
 const routes: Routes = [ 
   {
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'mall/:id/floor/:floorid',
     component: FloorPageComponent
+  },
+  {
+    path: 'contactus',
+    component: ContactusComponent
   }
 
 ];

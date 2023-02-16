@@ -27,7 +27,10 @@ export class TopnavComponent implements OnInit {
     this.logoname=localStorage.getItem('logoname');
  this.route.params.subscribe(params => { 
     if(params['shopid']){
+      $('.main-menu ul li.contact').css('display','inline-block');
       this.shopPage = true;
+    }else{
+      this.shopPage = false;
     }
     this.model.shopname = params['id']; // (+) converts string 'id' to a number
     this.CommonService.getdatabyid(AppSettings.getshopmallproduct,this.model)
@@ -89,6 +92,9 @@ this.searchForm();
             wrapper.removeClass('overlay-active');
         });
 
+  }
+  navigateContactPage(){
+    this.router.navigate(['/contactus']);
   }
 
 }

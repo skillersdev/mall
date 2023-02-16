@@ -344,7 +344,7 @@
               </div> -->
       <div  class="shop-product-content tab-content" *ngFor="let item of productdata">
 
-        <div class="section-title text-center mt-20 mb-55">
+        <div class="section-title text-center mt-20 mb-55" *ngIf="item.productlist.length>0">
           <h2> {{item.catName}}</h2>
         </div>
 

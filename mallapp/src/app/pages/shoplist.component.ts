@@ -22,7 +22,7 @@ export class ShoplistComponent implements OnInit  {
   viewData:any;
   selectedQty : any;
   orderItems:any;
-
+  bannerDetail:any;
   customerData:any;
   productdata:any;
   productfilter:any;
@@ -49,10 +49,14 @@ ngOnInit() {
     this.productlist = response.result;
     this.shop = response.shop;
     this.category=response.categorylist;
-    this.banner = this.image+this.shop.banner;
+
+    this.bannerDetail = (this.shop.shop_banner_detail)?this.shop.shop_banner_detail:this.shop.banner;
+    this.banner = this.image+this.bannerDetail;
+
+    console.log(this.banner);
     this.mallLogo = this.image+ this.shop.logo;
     this.category.forEach(catData => {
-        console.log(catData.category_name);
+        
 
         this.productfilter=response.result.filter(res => res.category_id == catData.id);
        this.productdata.push({catName:catData.category_name,productlist:this.productfilter});   

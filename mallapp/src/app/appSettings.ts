@@ -2,16 +2,16 @@ export class AppSettings{
 
 	
 	//Local
-	//  public static API_BASE = "http://localhost/ag7dev/api";	
-	//  public static IMAGE_BASE = "http://localhost/ag7dev/api/mallproduct_image/";
+	 public static API_BASE = "http://localhost/ag7dev/api";	
+	 public static IMAGE_BASE = "http://localhost/ag7dev/api/mallproduct_image/";
 
 	// public static API_BASE = "http://localhost/3abc7dev/ag7dev/api";	
 	// public static IMAGE_BASE = "http://localhost/3abc7dev/ag7dev/api/mallproduct_image/";
 
 	//Live server
 
-	public static API_BASE = "https://3abc7.com/api";	
-	public static IMAGE_BASE = "https://3abc7.com/api/mallproduct_image/";
+	// public static API_BASE = "https://3abc7.com/api";	
+	// public static IMAGE_BASE = "https://3abc7.com/api/mallproduct_image/";
 	 
 
 

@@ -16,6 +16,7 @@ export class FloorPageComponent {
   floorshoplist:any; 
   floorDetails:any; 
   mallfloorList:any; 
+  bannerImage:any;
   image:any;
   shop:any;
   model:any;
@@ -50,8 +51,8 @@ ngOnInit() {
     this.floorshoplist = response.result;
     this.floorDetails = response.floorDetail;
     this.model.mallName = response.mall_name;
-
-    $(".shop-limited-area").css("background-image", "url(" +this.image+ this.floorDetails[0].image_name + ")");
+      this.bannerImage = (this.floorDetails[0].floor_detail_banner)?this.floorDetails[0].floor_detail_banner:this.floorDetails[0].image_name;
+    $(".shop-limited-area").css("background-image", "url(" +this.image+ this.bannerImage + ")");
   });
  
 

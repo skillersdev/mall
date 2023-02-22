@@ -25,9 +25,12 @@ export class TopnavComponent implements OnInit {
     this.imagepath = AppSettings.IMAGE_BASE;
     this.shopPage = false;
     this.logoname=localStorage.getItem('logoname');
+   
  this.route.params.subscribe(params => { 
+  console.log(params['shopid'])
     if(params['shopid']){
       $('.main-menu ul li.contact').css('display','inline-block');
+      $('.cur-lang-acc-dropdown ul li.contact').css('display','inline-block');
       this.shopPage = true;
     }else{
       this.shopPage = false;
@@ -62,7 +65,11 @@ this.searchForm();
     });
   }
   navigatePage(){
-    if(this.shopPage){
+    console.log(this.shopPage)
+   if(this.router.url==="/contactus"){
+      this.router.navigate([localStorage.getItem('shopUrl')]);
+    } else if(this.shopPage){
+      $('.main-search-active').removeClass('inside');
       this.router.navigate([this.router.url]);
     }else{
       this.router.navigate(['/']);

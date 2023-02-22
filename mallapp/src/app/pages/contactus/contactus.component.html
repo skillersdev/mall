@@ -153,14 +153,14 @@
                         
                         <ul>
                             <li *ngIf="model.twitter_url">
-                                <a href="{{model.twitter_url}}"><i class="ion-social-twitter"></i></a>
+                                <a href="{{model.twitter_url}}" target="_blank"><i class="ion-social-twitter"></i></a>
                             </li> 
                             <li *ngIf="model.email">
-                                <a href="{{model.email}}"><i class="ion-ios-email-outline"></i></a>
+                                <a href="{{model.email}}" target="_blank"><i class="ion-ios-email-outline"></i></a>
                             </li> 
                             <li *ngIf="model.fb_link">
-                                <a href="{{model.fb_link}}"><i class="ion-social-facebook"></i></a></li> 
-                            <li *ngIf="model.telegram"><a href="{{model.telegram}}"><i class="ion-social-instagram-outline"></i></a></li> 
+                                <a href="{{model.fb_link}}" target="_blank"><i class="ion-social-facebook"></i></a></li> 
+                            <li *ngIf="model.telegram"><a href="{{model.telegram}}" target="_blank"><i class="ion-social-instagram-outline"></i></a></li> 
                         </ul>
                     </div>
                 </div>

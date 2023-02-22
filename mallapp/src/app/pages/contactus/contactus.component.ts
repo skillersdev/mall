@@ -24,7 +24,10 @@ export class ContactusComponent implements OnInit {
   {
     this.CommonService.editdata(AppSettings.editshop,id)
         .subscribe(resultdata =>{   
-          this.model = resultdata.result;          
+          this.model = resultdata.result; 
+          this.model.twitter_url = "https://"+this.model.twitter_url;   
+          this.model.fb_link = "https://"+this.model.fb_link; 
+          this.model.telegram = "https://"+this.model.telegram;   
         });
   }
   submitContactform(){

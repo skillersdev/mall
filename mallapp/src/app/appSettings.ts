@@ -26,5 +26,6 @@ export class AppSettings{
 	public static addOrder=AppSettings.API_BASE+'/createorder';
 	public static editshop = AppSettings.API_BASE + "/editshop/";
 	public static sendContactdetails = AppSettings.API_BASE + "/sendcontact";
+	public static shopAction= AppSettings.API_BASE + "/shopAction";
 	
 }

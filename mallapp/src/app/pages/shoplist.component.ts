@@ -27,11 +27,13 @@ export class ShoplistComponent implements OnInit  {
   productdata:any;
   productfilter:any;
   mallLogo:any;
+  shopactionModel:any;
   
   constructor(private CommonService: CommonService,private route:ActivatedRoute,private router: Router,private http:Http) { }
 
 ngOnInit() {
   this.model={};
+  this.shopactionModel={};
   this.model.selectedQty=1;
   this.image = AppSettings.IMAGE_BASE;
   this.customerData={};
@@ -41,13 +43,15 @@ ngOnInit() {
     this.model.shopname = params['shopid']; 
     this.model.floorCode = params['floorid'];
     this.model.mallName = params['id'];// (+) converts string 'id' to a number
+    localStorage.setItem('shopUrl','mall/'+params['id']+'/floor/'+params['floorid']+'/shop/'+params['shopid'])
  }); 
  
   this.CommonService.insertdata(AppSettings.getshopmallproduct,this.model)
   .subscribe(response =>{  
-    console.log(response);     
     this.productlist = response.result;
     this.shop = response.shop;
+    this.shopactionModel.totalfollowers = this.shop.follow_count;
+    this.shopactionModel.totalviewers = this.shop.view_count;
     this.category=response.categorylist;
 
     this.bannerDetail = (this.shop.shop_banner_detail)?this.shop.shop_banner_detail:this.shop.banner;
@@ -110,7 +114,21 @@ confirmOrder(){
    
   });
 }
-
+actionOnShop(type:any,shopId:any,typeCount:any){
+  this.shopactionModel.type = type;
+  this.shopactionModel.shopid = shopId;
+  this.shopactionModel.typeCount = typeCount;
+  this.CommonService.insertdata(AppSettings.shopAction,this.shopactionModel)
+    .subscribe(response =>{   
+      console.log(response)
+      if(response.follow)    {
+        this.shopactionModel.totalfollowers = response.follow;
+      }else{
+        this.shopactionModel.totalviewers = response.view;
+      }
+    
+  });
+}
 placeOrder(orderProduct:any,selectedQty:any){
   this.orderItems=orderProduct;
   this.model.shop_id=orderProduct.shop_id;

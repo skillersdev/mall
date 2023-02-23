@@ -105,10 +105,8 @@ viewProduct(proData:any) {
 
 confirmOrder(){
  
-  console.log("confirmOrder-->",this.model);
   this.CommonService.insertdata(AppSettings.addOrder,this.model)
-    .subscribe(response =>{       
-    console.log(response.result);
+    .subscribe(response =>{ 
     $("#OrderFormModal").modal('hide');
     alert("Order Placed Successfully");
    

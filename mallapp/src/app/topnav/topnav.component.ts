@@ -27,8 +27,8 @@ export class TopnavComponent implements OnInit {
     this.logoname=localStorage.getItem('logoname');
    
  this.route.params.subscribe(params => { 
-  console.log(params['shopid'])
-    if(params['shopid']){
+  console.log(params)
+    if(params['shopid'] || this.router.url==="/contactus"){
       $('.main-menu ul li.contact').css('display','inline-block');
       $('.cur-lang-acc-dropdown ul li.contact').css('display','inline-block');
       this.shopPage = true;

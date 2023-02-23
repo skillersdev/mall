@@ -160,11 +160,15 @@
     </div>
    
   </div>
-  <div class="container-fluid">
-    <a class="btn-hover limited-btn" href="javascript:void()" (click)="actionOnShop('follow',shop.id,'follow_count')">Follows ( {{shopactionModel.totalfollowers}} )</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a class="btn-hover limited-btn" href="javascript:void()" (click)="actionOnShop('view',shop.id,'view_count')">View ({{shopactionModel.totalviewers}})</a>
-  </div>
+ 
 
+</div>
+<div class="container-fluid">
+  <a *ngIf="shopactionModel.totalfollowers>0" class="btn-hover limited-btn" href="javascript:void()" (click)="actionOnShop('follow',shop.id,'follow_count')">Like ( {{shopactionModel.totalfollowers}} )</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a *ngIf="shopactionModel.totalfollowers==0" class="btn-hover limited-btn" href="javascript:void()" (click)="actionOnShop('follow',shop.id,'follow_count')">Like </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+  <a *ngIf="shopactionModel.totalviewers>0" class="btn-hover limited-btn" href="javascript:void()" (click)="actionOnShop('view',shop.id,'view_count')">View ({{shopactionModel.totalviewers}})</a>
+  <a *ngIf="shopactionModel.totalviewers==0"class="btn-hover limited-btn" href="javascript:void()" (click)="actionOnShop('view',shop.id,'view_count')">View </a>
 </div>
 <div class="shop-page-wrapper hidden-items padding-filter">
   <div class="container-fluid">

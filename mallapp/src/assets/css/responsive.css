@@ -542,7 +542,7 @@
   padding-left: 40px;
 }    
 .header-area-2 .header-search-cart {
-  margin-right: 50px;
+  margin: -42px 50px;
 }   
 .mean-container a.meanmenu-reveal {
   border: 1px solid #666;
@@ -1079,7 +1079,7 @@
   width: 30px;
 }
 .header-area-2 .header-search-cart {
-  margin-right: 50px;
+  margin: -42px 50px;
 }   
 .mean-container a.meanmenu-reveal {
   border: 1px solid #666;
@@ -1560,6 +1560,8 @@ p.checkout-coupon input[type="text"] {
   
 .sidebar-cart-icon button, .sidebar-nav-icon button , .sidebar-search-icon button , .clickable-mainmenu-icon button {
   font-size: 40px;
+  margin-right: 57px;
+}
 }    
 .intelligent-header-pd {
   padding: 0 15px;

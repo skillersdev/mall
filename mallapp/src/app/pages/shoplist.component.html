@@ -8,6 +8,44 @@
   overflow: hidden;
   text-overflow: ellipsis; 
 }
+.view-like-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.view-like-section .limited-btn{
+    text-align: center;
+    background: #000000;
+    border-radius: 3px;
+    box-shadow: 0 10px 20px -8px rgb(73 70 71);
+    display: block;
+    font-size: 13px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    text-decoration: none;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+}
+
+.limited-btn .icon{
+  margin-right: 5px;
+  font-size: 13px;
+}
+
+.badge {
+  position: absolute;
+    top: 10px;
+    right: 7px;
+    /* padding: 7px 10px; */
+    /* border-radius: 50% 1px; */
+    padding: 8px 10px 8px 10px;
+    background: red;
+    color: white;
+    /* font-size: 12px; */
+}
+
 </style>
 <app-topnav></app-topnav>
 <!-- sidebar-cart start -->
@@ -163,12 +201,12 @@
  
 
 </div>
-<div class="container-fluid">
-  <a *ngIf="shopactionModel.totalfollowers>0" class="btn-hover limited-btn" href="javascript:void()" (click)="actionOnShop('follow',shop.id,'follow_count')">Like ( {{shopactionModel.totalfollowers}} )</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a *ngIf="shopactionModel.totalfollowers==0" class="btn-hover limited-btn" href="javascript:void()" (click)="actionOnShop('follow',shop.id,'follow_count')">Like </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<div class="container-fluid view-like-section">
+  <a *ngIf="shopactionModel.totalfollowers>0" class="btn-hover limited-btn" href="javascript:void()" (click)="actionOnShop('follow',shop.id,'follow_count')"><i class="icon ion-thumbsup" aria-hidden="true"></i> Like  <span class="badge">{{shopactionModel.totalfollowers}}</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a *ngIf="shopactionModel.totalfollowers==0" class="btn-hover limited-btn" href="javascript:void()" (click)="actionOnShop('follow',shop.id,'follow_count')"><i class="icon ion-thumbsup" aria-hidden="true"></i> Like </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-  <a *ngIf="shopactionModel.totalviewers>0" class="btn-hover limited-btn" href="javascript:void()" (click)="actionOnShop('view',shop.id,'view_count')">View ({{shopactionModel.totalviewers}})</a>
-  <a *ngIf="shopactionModel.totalviewers==0"class="btn-hover limited-btn" href="javascript:void()" (click)="actionOnShop('view',shop.id,'view_count')">View </a>
+  <a *ngIf="shopactionModel.totalviewers>0" class="btn-hover limited-btn" href="javascript:void()" (click)="actionOnShop('view',shop.id,'view_count')"> <i class="icon ion-ios-eye" aria-hidden="true"></i> View <span class="badge">{{shopactionModel.totalviewers}}</span></a>
+  <a *ngIf="shopactionModel.totalviewers==0"class="btn-hover limited-btn" href="javascript:void()" (click)="actionOnShop('view',shop.id,'view_count')"> <i class="icon ion-ios-eye" aria-hidden="true"></i> View </a>
 </div>
 <div class="shop-page-wrapper hidden-items padding-filter">
   <div class="container-fluid">

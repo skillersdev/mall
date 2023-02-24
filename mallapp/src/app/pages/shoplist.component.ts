@@ -80,7 +80,7 @@ ngOnInit() {
     localStorage.setItem('logoname', this.shop.logo);
     localStorage.setItem('shopbannername', this.banner);
     localStorage.setItem('shopId', this.shop.id);
-   
+    this.actionOnShop('view',this.shop.id,'view_count')
 
   });
 }
